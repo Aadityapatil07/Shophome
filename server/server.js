@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://shophome-api.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -41,6 +41,11 @@ app.use(
     credentials: true,
   })
 );
+app.options("*", cors({
+  origin: '*', // Temporary: Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}))
 
 app.use(cookieParser());
 app.use(express.json());
