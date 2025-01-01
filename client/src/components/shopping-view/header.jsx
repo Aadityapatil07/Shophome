@@ -72,8 +72,11 @@ function HeaderRightContent() {
   const dispatch = useDispatch();
 
   function handleLogout() {
-    dispatch(logoutUser());
-  }
+      //dispatch(logoutUser());
+      dispatch(resetTokeAndCredentials());
+      sessionStorage.clear();
+      navigate('/auth/login')
+    }
 
   useEffect(() => {
     dispatch(fetchCartItems(user?.id));
