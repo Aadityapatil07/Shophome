@@ -23,6 +23,7 @@ import UserCartWrapper from "./cart-wrapper";
 import { useEffect, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cart-slice";
 import { Label } from "../ui/label";
+ import { resetTokenAndCredentials} from "@/store/auth-slice"
 
 function MenuItems() {
   const navigate = useNavigate();
@@ -73,7 +74,7 @@ function HeaderRightContent() {
 
   function handleLogout() {
       //dispatch(logoutUser());
-      dispatch(resetTokeAndCredentials());
+      dispatch(resetTokenAndCredentials());
       sessionStorage.clear();
       navigate('/auth/login')
     }

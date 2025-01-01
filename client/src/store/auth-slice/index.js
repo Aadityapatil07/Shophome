@@ -99,7 +99,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {},
-    resetTokeAndCredentials:()=>{
+    resetTokenAndCredentials:(state, action)=>{
       state.isAuthenticated = false;
       state.user = null;
       state.token = null;
@@ -159,5 +159,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { setUser, resetTokeAndCredentials} = authSlice.actions;
+export const { setUser, resetTokenAndCredentials} = authSlice.actions;
 export default authSlice.reducer;
